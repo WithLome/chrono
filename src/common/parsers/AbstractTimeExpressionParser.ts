@@ -322,9 +322,12 @@ export abstract class AbstractTimeExpressionParser implements Parser {
         }
 
         // Instead of "am/pm", it ends with "a" or "p" (e.g "1a", "123p"), this seems unlikely
+        // @thatericsmith - in our case it is likely - so we comment this out
+        /*
         if (result.text.match(/\d[apAP]$/)) {
             return null;
         }
+        */
 
         // If it ends only with numbers or dots
         const endingWithNumbers = result.text.match(/[^\d:.](\d[\d.]+)$/);
